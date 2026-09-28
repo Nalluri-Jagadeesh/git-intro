@@ -1,0 +1,93 @@
+==================================================
+GIT & GITHUB NOTES
+==================================================
+
+1. INTRODUCTION TO VCS & GIT/GITHUB
+----------------------------------
+- VCS (Version Control System): Used to track updates, save project versions, and handle huge traffic.
+- Example: If a Facebook website is updated to version 1.2.16 from 1.2.15, but an issue occurs in the new version 1.0.2.16, we need to revert to old version 1.2.15.
+- Git is used with bug fixing so git is used for redeploying with bugs and redeploying the overall deployment of a site/project.
+- Repo (Repository): Project folder on a remote server.
+- GitHub: One example of a remote repository hosting service.
+
+2. CORE PARTS OF GIT & WORKFLOW
+-------------------------------
+- Parts of Git & Git Repos:
+  * Staging area & commits
+  * Branches
+  * Issues & PRs (Pull Requests)
+
+- Local vs Remote & Workflow:
+  1. Remote Repository
+  2. Local Repository
+  3. Staging Area (creates .git file hidden)
+  4. Working Directory (file created, saved but not sent to server/used git cmds)
+  - Push: Moves code from Local Repository to Remote Repository.
+  - Commit: Moves code from Staging Area to Local Repository.
+  - Add: Moves code from Working Directory to Staging Area.
+
+3. BASIC GIT COMMANDS (ORDER OF EXECUTION)
+------------------------------------------
+Step 1: Open cmd, post installing git -> Create folder with a name & open cmd from folder path.
+Step 2: Initialize git in the folder
+    git init
+    git status
+
+Step 3: Add files to staging area
+    - git add . (for all regular files)
+    - git add <file_name> (for single specific file)
+
+Step 4: Commit files to local repository
+    - git commit -m "commit message here" (for all files)
+
+Step 5: Push to GitHub
+    - Go to GitHub -> Create a new repository.
+    - Push commands (see remote repo instructions).
+
+4. BRANCHES
+-----------
+- main / master: Core code -> deploy (or) redeploy features.
+- In a company, example: 10 developers have 10 branches/features. They deploy and pull the requests.
+- Branches are copies of one main/master branch (copy 1, copy 2, copy 3, etc.).
+- PR (Pull Request): code review before merging.
+
+- Create & Switch Branches Command:
+    git checkout -b "copy1"
+  *(Used to jump to a new branch)*
+
+  ==================================================
+GIT CHECKOUT COMMAND REFERENCE
+==================================================
+
+WHAT IS `git checkout`?
+------------------------
+- It is the classic command used to move around your Git repository.
+- It lets you switch between different branches, inspect old commits, or restore files.
+
+COMMON USE CASES & COMMANDS:
+----------------------------
+
+1. Switch to an Existing Branch
+   * Command:
+     git checkout <branch-name>
+   * Purpose: Moves your working directory to point to that branch.
+
+2. Create and Switch to a New Branch (Combo Command)
+   * Command:
+     git checkout -b <new-branch-name>
+   * Purpose: Creates a brand new branch right away and immediately jumps into it. (Like `git checkout -b "copy1"` from your notes).
+
+3. Switch Back to Main/Master
+   * Command:
+     git checkout main
+     *(or git checkout master)*
+   * Purpose: Takes you back to your primary production/main line of code.
+
+4. Undo Changes in a File (Discard Local Changes)
+   * Command:
+     git checkout -- <file-name>
+   * Purpose: Reverts a specific file in your working directory back to its last committed state.
+
+NOTE:
+-----
+In newer versions of Git, `git switch` is often used for changing branches and `git restore` for files, but `git checkout` remains the most widely used all-in-one command.
